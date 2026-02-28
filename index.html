@@ -40,7 +40,12 @@
         <div class="card">
           <h2>현실형 도시 서버</h2>
           <p>오렌지시티는 도시 RP 기반의 자유 서버입니다.</p>
-          <a class="btn" href="#/shop">🛒 상점 바로 가기</a>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn" href="#/shop">🛒 상점</a>
+            <a class="btn" href="#/request">📩 요청 / 코멘트</a>
+            <a class="btn" href="#/op">🛡 OP 요청</a>
+            <a class="btn" href="https://discord.gg/PuesAx4S" target="_blank">💬 공식 디스코드</a>
+          </div>
         </div>
       `,
       '/shop': `
@@ -54,6 +59,27 @@
             </div>
             <button class="btn buy" onclick="buy()">구매</button>
           </div>
+        </div>
+      `,
+      '/request': `
+        <div class="card">
+          <h2>📩 요청 & 코멘트</h2>
+          <p>서버에 바라는 점이나 개선 아이디어를 적어주세요.</p>
+          <textarea placeholder="요청사항을 입력하세요" style="width:100%; height:120px; padding:12px; border-radius:12px; border:2px solid #e5e7eb;"></textarea>
+          <br><br>
+          <button class="btn" onclick="alert('요청이 접수되었습니다! (관리자가 직접 확인합니다)')">제출</button>
+        </div>
+      `,
+      '/op': `
+        <div class="card">
+          <h2>🛡 OP 요청</h2>
+          <p>관리자(OP) 권한은 신중히 검토 후 지급됩니다.</p>
+          <ul>
+            <li>디스코드 활동 이력</li>
+            <li>서버 기여도</li>
+            <li>규칙 이해도</li>
+          </ul>
+          <button class="btn" onclick="alert('OP 요청이 접수되었습니다. 디스코드로 연락주세요.')">OP 요청하기</button>
         </div>
       `
     };
