@@ -5,25 +5,24 @@
   <title>오렌지시티 서버</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background:#0f172a; color:#e5e7eb; }
-    header { padding: 20px; background:#020617; border-bottom:1px solid #1f2937; }
-    nav a { margin-right: 12px; color:#93c5fd; text-decoration:none; font-weight:600; }
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background:#ffffff; color:#111827; }
+    header { padding: 20px; background:#ffffff; border-bottom:2px solid #e5e7eb; }
+    nav a { margin-right: 16px; color:#2563eb; text-decoration:none; font-weight:700; }
     nav a:hover { text-decoration:underline; }
-    main { padding: 32px; }
-    .card { background:#020617; border:1px solid #1f2937; border-radius:16px; padding:20px; margin-bottom:16px; }
-    .btn { display:inline-block; padding:12px 16px; border-radius:12px; background:#2563eb; color:white; text-decoration:none; font-weight:700; }
-    .btn.secondary { background:#16a34a; }
-    footer { padding: 20px; color:#9ca3af; border-top:1px solid #1f2937; }
+    main { padding: 40px; max-width: 900px; margin: auto; }
+    .card { border:2px solid #e5e7eb; border-radius:20px; padding:28px; margin-bottom:24px; }
+    .btn { display:inline-block; padding:14px 20px; border-radius:14px; background:#2563eb; color:white; text-decoration:none; font-weight:800; }
+    .btn.buy { background:#dc2626; }
+    .product { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    footer { padding: 20px; color:#6b7280; border-top:2px solid #e5e7eb; text-align:center; }
   </style>
 </head>
 <body>
   <header>
-    <h1>🍊 오렌지시티 서버</h1>
+    <h1>🍊 오렌지시티</h1>
     <nav>
       <a href="#/">홈</a>
-      <a href="#/guide">가이드</a>
       <a href="#/shop">상점</a>
-      <a href="#/apply">지원</a>
     </nav>
   </header>
 
@@ -39,37 +38,29 @@
     const pages = {
       '/': `
         <div class="card">
-          <h2>환영합니다!</h2>
-          <p>현실과 비슷한 도시 RP 서버, 오렌지시티입니다.</p>
-          <a class="btn" href="#/guide">서버 가이드 보기</a>
-          <a class="btn secondary" href="#/shop">상점 바로가기</a>
-        </div>
-      `,
-      '/guide': `
-        <div class="card">
-          <h2>📘 서버 가이드</h2>
-          <ul>
-            <li>/이동 시청, 학교</li>
-            <li>직업 시스템</li>
-            <li>현실 시간 연동</li>
-          </ul>
+          <h2>현실형 도시 서버</h2>
+          <p>오렌지시티는 도시 RP 기반의 자유 서버입니다.</p>
+          <a class="btn" href="#/shop">🛒 상점 바로 가기</a>
         </div>
       `,
       '/shop': `
         <div class="card">
-          <h2>🛒 상점</h2>
-          <p>상점 개설 비용: <b>100,000원</b></p>
-          <button class="btn" onclick="alert('게임 내에서 /상점 명령어를 사용하세요!')">상점 열기</button>
-        </div>
-      `,
-      '/apply': `
-        <div class="card">
-          <h2>📝 지원하기</h2>
-          <p>디스코드에서 인증 후 지원해주세요.</p>
-          <a class="btn" href="https://discord.gg/" target="_blank">디스코드로 이동</a>
+          <h2>🛒 오렌지시티 상점</h2>
+          <div class="product">
+            <div>
+              <h3>AK-47</h3>
+              <p>강력한 자동소총</p>
+              <p><b>가격: 50,000원</b></p>
+            </div>
+            <button class="btn buy" onclick="buy()">구매</button>
+          </div>
         </div>
       `
     };
+
+    function buy() {
+      alert('AK-47 구매 요청이 접수되었습니다!\n(실제 지급은 게임 내에서 처리됩니다)');
+    }
 
     function render() {
       const route = location.hash.replace('#', '') || '/';
@@ -81,4 +72,3 @@
   </script>
 </body>
 </html>
-
