@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>OrangeOrange Minecraft Server</title>
+  <meta charset="UTF-8" />
+  <title>오렌지시티 서버</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background:#0f172a; color:#e5e7eb; }
+    header { padding: 20px; background:#020617; border-bottom:1px solid #1f2937; }
+    nav a { margin-right: 12px; color:#93c5fd; text-decoration:none; font-weight:600; }
+    nav a:hover { text-decoration:underline; }
+    main { padding: 32px; }
+    .card { background:#020617; border:1px solid #1f2937; border-radius:16px; padding:20px; margin-bottom:16px; }
+    .btn { display:inline-block; padding:12px 16px; border-radius:12px; background:#2563eb; color:white; text-decoration:none; font-weight:700; }
+    .btn.secondary { background:#16a34a; }
+    footer { padding: 20px; color:#9ca3af; border-top:1px solid #1f2937; }
+  </style>
 </head>
-<body style="background:#ff8c00;color:white;text-align:center;font-family:sans-serif;">
-  <h1>🍊 Orangeorange Server</h1>
-  <p>버전: 1.8 ~ 최신</p>
-  <p>서버 주소: <b>orangeorange.kro.kr</b></p>
-  <p>디스코드: 준비 중</p>
-  <p>F&Q: orange서버는 365일 24시간인가요?
-  ㄴ 아니요! 365일 24시간이라고 확정 지을수는 없습니다!</p>
-  <p>오렌지 서버는 최대 5000명입니다!</p>
-  <p>섭장,서버 총 관리자:Hungry_taeorange</p>
-  <p>서버 부 관리자:jihan0601, ttggaety</p>
-  <p>이 서버는 킷:좋은 무기들: 이 잇습니다!</p>
+<body>
+  <header>
+    <h1>🍊 오렌지시티 서버</h1>
+    <nav>
+      <a href="#/">홈</a>
+      <a href="#/guide">가이드</a>
+      <a href="#/shop">상점</a>
+      <a href="#/apply">지원</a>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    © OrangeCity Server
+  </footer>
+
+  <script>
+    const app = document.getElementById('app');
+
+    const pages = {
+      '/': `
+        <div class="card">
+          <h2>환영합니다!</h2>
+          <p>현실과 비슷한 도시 RP 서버, 오렌지시티입니다.</p>
+          <a class="btn" href="#/guide">서버 가이드 보기</a>
+          <a class="btn secondary" href="#/shop">상점 바로가기</a>
+        </div>
+      `,
+      '/guide': `
+        <div class="card">
+          <h2>📘 서버 가이드</h2>
+          <ul>
+            <li>/이동 시청, 학교</li>
+            <li>직업 시스템</li>
+            <li>현실 시간 연동</li>
+          </ul>
+        </div>
+      `,
+      '/shop': `
+        <div class="card">
+          <h2>🛒 상점</h2>
+          <p>상점 개설 비용: <b>100,000원</b></p>
+          <button class="btn" onclick="alert('게임 내에서 /상점 명령어를 사용하세요!')">상점 열기</button>
+        </div>
+      `,
+      '/apply': `
+        <div class="card">
+          <h2>📝 지원하기</h2>
+          <p>디스코드에서 인증 후 지원해주세요.</p>
+          <a class="btn" href="https://discord.gg/" target="_blank">디스코드로 이동</a>
+        </div>
+      `
+    };
+
+    function render() {
+      const route = location.hash.replace('#', '') || '/';
+      app.innerHTML = pages[route] || '<div class="card"><h2>404</h2><p>페이지를 찾을 수 없습니다.</p></div>';
+    }
+
+    window.addEventListener('hashchange', render);
+    render();
+  </script>
 </body>
 </html>
+
