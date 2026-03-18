@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>오렌지시티 서버</title>
+  <title>오렌지야생 서버</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background:#ffffff; color:#111827; }
@@ -22,7 +22,7 @@
     <h1>🍊 오렌지시티</h1>
     <nav>
       <a href="#/">홈</a>
-      <a href="#/shop">상점</a>
+      <a href="#/explain">설명</a>
     </nav>
   </header>
 
@@ -41,23 +41,21 @@
           <h2>현실형 도시 서버</h2>
           <p>오렌지시티는 도시 RP 기반의 자유 서버입니다.</p>
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn" href="#/shop">🛒 상점</a>
-            <a class="btn" href="#/request">📩 요청 / 코멘트</a>
-            <a class="btn" href="#/op">🛡 OP 요청</a>
+            <a class="btn" href="#/expain"> 서버 안내</a>
+            <a class="btn" href="#/request">📩 요청 / 코멘트 ( 추후 실제로 메시지 가는 기능 만들 예정)</a>
+            <a class="btn" href="#/op">🛡 OP 요청 ( 추후 실제로 메시지 가는 기능 만들 예정)</a>
             <a class="btn" href="https://discord.gg/PuesAx4S" target="_blank">💬 공식 디스코드</a>
           </div>
         </div>
       `,
-      '/shop': `
+      '/explain': `
         <div class="card">
-          <h2>🛒 오렌지시티 상점</h2>
+          <h2>서버 안내</h2>
           <div class="product">
             <div>
-              <h3>AK-47</h3>
-              <p>강력한 자동소총</p>
-              <p><b>가격: 50,000원</b></p>
-            </div>
-            <button class="btn buy" onclick="buy()">구매</button>
+              <p>오렌지 야생 서버는 무정부 서버입니다!
+              2b2t.한국의 모티브로 만든 오렌지 무정부 서버를 많이 와주세요!</p>
+            <div>
           </div>
         </div>
       `,
@@ -67,7 +65,7 @@
           <p>서버에 바라는 점이나 개선 아이디어를 적어주세요.</p>
           <textarea placeholder="요청사항을 입력하세요" style="width:100%; height:120px; padding:12px; border-radius:12px; border:2px solid #e5e7eb;"></textarea>
           <br><br>
-          <button class="btn" onclick="alert('요청이 접수되었습니다! (관리자가 직접 확인합니다)')">제출</button>
+          <button class="btn" onclick="alert(아직 실현 안된 기능입니다!)">ㅇㅇ 알겠다</button>
         </div>
       `,
       '/op': `
@@ -79,7 +77,7 @@
             <li>서버 기여도</li>
             <li>규칙 이해도</li>
           </ul>
-          <button class="btn" onclick="alert('OP 요청이 접수되었습니다. 디스코드로 연락주세요.')">OP 요청하기</button>
+          <button class="btn" onclick="alert(아직 실현 되지 않은 기능입니다!)">ㅇㅇ 기다릴게</button>
         </div>
       `
     };
